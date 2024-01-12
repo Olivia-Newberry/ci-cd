@@ -20,11 +20,11 @@ jobs:
       - name: Show checklist
         uses: marocchino/sticky-pull-request-comment@v2
         with:
-          header: show_checklist
-          message: |
-          - [ ] Submitted code passes formatting requirements
-          - [ ] Code is submitted to a good standard with MVC standards maintained
-          - [ ] There are no hardcoded values outwith config files
-          - [ ] Cyber security risks have been considered
-          - [ ] Code is in testable units where possible with applicable unit tests in place where appropriate
-          - [ ] Code is written with performance in mind and should still perform well with larger datasets
+            header: show_checklist
+            message: |
+              - [ ] Submitted code passes formatting requirements
+              - [ ] Code is submitted to a good standard with MVC standards maintained
+              - [ ] There are no hardcoded values outwith config files
+              - [ ] Cyber security risks have been considered
+              - [ ] Code is in testable units where possible with applicable unit tests in place where appropriate
+              - [ ] Code is written with performance in mind and should still perform well with larger datasets
