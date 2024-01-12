@@ -1,0 +1,30 @@
+name: "Pull request checklist"
+on:
+  pull_request_target:
+    types:
+      - ready_for_review
+jobs:
+  pull_request_info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Extract branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_HEAD_REF})"
+        id: extract_branch
+
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Show checklist
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: show_checklist
+          message: |
+          - [ ] Submitted code passes formatting requirements
+          - [ ] Code is submitted to a good standard with MVC standards maintained
+          - [ ] There are no hardcoded values outwith config files
+          - [ ] Cyber security risks have been considered
+          - [ ] Code is in testable units where possible with applicable unit tests in place where appropriate
+          - [ ] Code is written with performance in mind and should still perform well with larger datasets
